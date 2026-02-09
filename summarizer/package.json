@@ -1,0 +1,11 @@
+{
+  "name": "ai-summarizer-bookmarklet",
+  "version": "1.0.0",
+  "description": "A dark-mode bookmarklet to summarize YouTube videos with Gemini, ChatGPT, or Claude.",
+  "scripts": {
+    "build": "uglifyjs src/main.js -c -m --quote-style 1 | xargs -I {} echo \"javascript:{}\" > dist/bookmarklet.js"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
+  }
+}
