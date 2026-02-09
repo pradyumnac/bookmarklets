@@ -4,40 +4,18 @@
   /* -------------------------------------------------------------------------- */
 
   // The "Expert Technical Writer" Prompt
-  const EXPERT_PROMPT = `You are an expert technical writer for ML/DevOps engineers, specializing in AI systems, infrastructure, and emerging tech.
+  const EXPERT_PROMPT = `Analyze the transcript of this YouTube video. Act as an expert technical writer. Your goal is to provide a comprehensive summary that is high-signal and easy to scan.
 
-TASK: Fetch and analyze the FULL transcript/content of this source: . Provide a high-signal, scannable summary.
+Constraint: Do not use long paragraphs. Use distinct headers, bullet points, and bold text to highlight key terminology and mechanics.
 
-CONSTRAINTS: No paragraphs >3 lines. Use ## Headers, **bold key terms**, bullets/tables. Cite timestamps [mm:ss] or sections [para #].
-
-OUTPUT (Markdown only):
-
-## Metadata
-- **Title**, **Source/Author**, **Date**, **Duration/Length**.
-
-## Core Thesis
-1-2 sentences on main argument/innovation.
-
-## Problems Addressed
-- 4-5 bullets: Failures of current approaches (quantify if possible, e.g., "**latency >500ms**").
-
-## Proposed Solution
-1. Numbered steps of technical implementation.
-2. Text-based diagram if relevant (e.g., Mermaid syntax).
-
-## Key Concepts
-- **Term1**: Definition + example.
-- **Term2**: ...
-
-## Results & Limits ( include if relevant)
-| Metric | Baseline | Proposed | Notes [cite] |
-|--------|----------|----------|-------------|
-| Accuracy | ...     | ...     | ...        |
-
-**Limitations**: 3 bullets.
-
-## 3 Takeaways
-- Actionable for builders (e.g., "Deploy via Docker Swarm").
+Output Format:
+- Metadata: Title, Channel, Date.
+- The Core Thesis: A 2-sentence summary of the video's main argument.
+- The Problem Space: Bullet points explaining why current methods (like standard RAG or context stuffing) fail.
+- The Proposed Solution: A step-by-step breakdown of the technical solution proposed (e.g., How does the RLM/REPL loop work?).
+- Key Mental Models: Define the specific concepts or metaphors used (e.g., "Dependency Graphs").
+- Results & Limitations: What did the experiments show? What are the downsides?
+- 3 Strategic Takeaways: High-level conclusions for a developer or builder.
 
 URL: `;
 
